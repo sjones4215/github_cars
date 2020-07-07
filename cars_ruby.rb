@@ -1,13 +1,13 @@
 puts "List of cars"
 puts "Enter in the make of the car"
-make=gets
+make=gets.chomp
 puts "Enter the model of the car"
-model=gets
+model=gets.chomp
 puts "Enter the color of the car"
-color=gets
+color=gets.chomp
 puts "Enter the year of the car"
-year=gets
-price="$25,000"
+year=gets.chomp
+puts "Enter the price of the car"
+price=gets.chomp
 
-puts "#{make} #{model} #{color} #{year}"
-puts "#{price}"
+puts "#{make}, #{model}, #{color}, #{year}, ($#{price})"
