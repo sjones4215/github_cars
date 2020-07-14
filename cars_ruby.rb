@@ -1,13 +1,8 @@
-puts "Enter some information to revel the price of you car"
-puts "Enter in the make of the car"
-make=gets.chomp
-puts "Enter the model of the car"
-model=gets.chomp
-puts "Enter the color of the car"
-color=gets.chomp
-puts "Enter the year of the car"
-year=gets.chomp
-puts "Enter the price you paid for your car"
-price=gets.chomp
-
-puts "#{make}, #{model}, #{color}, #{year}, ($#{price})"
+def ask_question(value)
+   puts"Enter information for #{value}"
+   gets.chomp
+end
+def depriciation(value)
+   value.to_f / 2
+end
+puts "#{ask_question("make").capitalize}, #{ask_question("model").capitalize}, esitimated at #{depriciation(ask_question("price")}"
