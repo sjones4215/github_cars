@@ -7,7 +7,7 @@ puts "Enter the color of the car"
 color=gets.chomp
 puts "Enter the year of the car"
 year=gets.chomp
-puts "Enter the price of the car"
+puts "Enter the price you paid for your car"
 price=gets.chomp
 
 puts "#{make}, #{model}, #{color}, #{year}, ($#{price})"
