@@ -5,7 +5,6 @@ class Menu
     def initialize
         @inv = Car_Inv.new
         @value = value
-        @sub = Search_Menu.new
     end
 
     def start
@@ -60,19 +59,18 @@ class Menu
         sub_search
     end
     def sub_search
-        @inv = @sub
         if @value == 1
-            @sub.list_search_color
+            @inv.list_search_color
         elsif @value == 2
-            @sub.list_search_make
+            @inv.list_search_make
         elsif @value == 3
-            @sub.list_search_model
+            @inv.list_search_model
         elsif @value == 4
-            @sub.list_search_year
+            @inv.list_search_year
         elsif @value == 5
-            @sub.list_search_milage
+            @inv.list_search_milage
         elsif @value == 6
-            @sub.list_search_price
+            @inv.list_search_price
         else @value == 7
             puts "Invalid Input"
         end
