@@ -1,10 +1,10 @@
 require_relative 'newcarform'
-require_relative 'search'
+require_relative 'car_inv'
+
 class Menu
     attr_accessor :inv, :value, :sub
     def initialize
         @inv = Car_Inv.new
-        @value = value
     end
 
     def start
@@ -17,7 +17,11 @@ class Menu
         puts ""
         puts "3: Press 3 to search for car."
         puts ""
-        puts "4: Press 4 to exit current menu"
+        puts "4: Press 4 to remove car from current inventory"
+        puts ""
+        puts "5: Press 5 to sell car from current inventory"
+        puts ""
+        puts "6: Press 6 to exit current menu"
         @value = gets.chomp.to_i
         input
     end
@@ -27,19 +31,24 @@ class Menu
             form = NewCarForm.new
             @inv.add_to(form.car)
             puts ""
-            puts "#{@inv.current_i[0]} was added to your inventory."
         elsif @value == 2
-           @inv.list
+            @inv.list
         elsif @value == 3
             search_menu
-        elsif @value == 4
+        elsif @value == 6
             puts ""
             puts "Have a nice day!"
+            exit
+        elsif @value == 4
+            @inv.remove
+        elsif @value == 5
+            @inv.sell
         else 
             puts "Invalid input"
         end
             start
-        end 
+        end
+
     def search_menu
         puts ""
         puts "What would you like to search by."
@@ -58,6 +67,7 @@ class Menu
         @value = gets.chomp.to_i
         sub_search
     end
+    
     def sub_search
         if @value == 1
             @inv.list_search_color

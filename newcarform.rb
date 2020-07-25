@@ -10,6 +10,7 @@ class NewCarForm
         @car.price = ask_question("price")
         @car.milage = ask_question("milage")
         @car.color = ask_question("color")
+        @car.sold
     end
 
     def ask_question(value)
